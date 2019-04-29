@@ -1,5 +1,5 @@
-# SmartBrain-api - v2
-Final project for Udemy course
+# AI_Face recognition app
+Personal project displaying fullstack skills.
 
 1. Clone this repo
 2. Run `npm install`
