@@ -11,6 +11,7 @@ services:
       - "3000:3000"
     environment:
       POSTGRES_URI: postgres://colin:password@postgres:5432/ai_face_docker
+      REDIS_URI: redis://redis:6379
     volumes:
       - ./://usr/src/AI_Face_Backend
 
@@ -25,5 +26,12 @@ services:
     build: ./postgres
     ports: 
       - "5432:5432"
+
+    # Redis
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
 
     
