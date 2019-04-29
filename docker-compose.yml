@@ -1,0 +1,29 @@
+version: '3.6'
+
+services: 
+  ai_face_api: 
+    container_name: backend
+    build: ./
+    # image: node:8.11.1
+    command: npm start
+    working_dir: /usr/src/AI_Face_Backend
+    ports: 
+      - "3000:3000"
+    environment:
+      POSTGRES_URI: postgres://colin:password@postgres:5432/ai_face_docker
+    volumes:
+      - ./://usr/src/AI_Face_Backend
+
+
+  # Postgres
+  postgres:
+    environment:
+      POSTGRES_USER: colin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ai_face_docker
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports: 
+      - "5432:5432"
+
+    
